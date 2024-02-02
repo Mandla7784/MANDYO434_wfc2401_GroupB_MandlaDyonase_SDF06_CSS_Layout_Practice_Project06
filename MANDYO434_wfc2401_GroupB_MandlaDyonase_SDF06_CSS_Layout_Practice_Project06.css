@@ -1,0 +1,220 @@
+/* Base Styles */
+
+:root {
+    font-size: 10px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Open Sans", Arial, sans-serif;
+    min-height: 100vh;
+    background-color: #fafafa;
+    color: #262626;
+    padding-bottom: 3rem;
+}
+
+img {
+    display: block;
+  
+}
+
+/*header start */
+header .container .profile   {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+   align-items: center;
+
+ 
+
+/*using flex-box to layout the header*/
+
+}
+
+.profile-stats ul{
+    display: flex;
+}
+
+.profile-stats ul li{
+    list-style-type: none;
+    margin-left: 10px;
+    font-size: 16px;
+}
+.profile-stat-count{
+    font-weight: bolder;
+    font-size: 14px;
+}
+.profile-image img{
+    border-radius: 50%;
+    border: 8px solid;
+    border-right-color: #be1894;
+    border-left-color: rgb(223, 157, 34);
+    border-bottom-color: #bd1493;
+   border-top-color: #991077;
+  
+}
+.profile-user-settings >  .profile-edit-btn{
+    padding: 5px 60px;
+    font-size: 14px;
+    border: none;
+    border-radius: 2px;
+    box-shadow: 0 0 1px rgba(75, 72, 72, 0.45);
+    transition: all .3s ease;
+    -webkit-transition: all .3s ease; 
+    -o-transition: all .3s ease; 
+    -ms-transition: all .3s ease; 
+}
+.profile-user-settings >  .profile-edit-btn:hover{
+    opacity: .8;
+}
+
+.profile-settings-btn{
+  
+   padding: 4px 10px;
+    border-radius: 2px;
+    border: none;
+    transition: all .3s ease;
+    -webkit-transition: all .3s ease; 
+    -o-transition: all .3s ease; 
+    -ms-transition: all .3s ease; 
+}
+
+.profile-settings-btn:hover{
+    opacity: .8;
+}
+
+
+/*header end */
+
+/*main start*/
+main img{
+    object-fit: cover;
+     
+    width: 300px;
+    height: 300px;
+    position: relative;
+    transition: all .3s ease;
+    -webkit-transition: all .3s ease; 
+    -o-transition: all .3s ease; 
+    -ms-transition: all .3s ease; 
+    
+}
+main img:hover{
+    opacity: .8;
+}
+
+main img::focus{
+    border: 2px solid rgb(244, 239, 239);
+}
+
+
+
+main .container:nth-child(1)
+{
+    justify-content: center;
+    display: flex;
+   
+}
+
+.container .gallery
+{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+   gap: 4px;
+    justify-content: center;
+    align-items: center;
+}
+.gallery-item-info ul li{
+    list-style-type: none;
+    font-size: 16px;
+}
+
+
+
+.gallery-item{
+    position: relative;
+}
+.gallery-item-type .fa-clone{
+    top: 20px;
+    right: 50px;
+    position: absolute;
+    color: white;
+    font-size: 20px;
+
+}
+
+
+/*main end*/
+
+
+
+[ id="new-content"]{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.btn-more{
+    text-align: center;
+    background-color: #262626;
+    color: rgb(222, 215, 215);
+    border: none;
+    padding: 8px 10px;
+    border-radius: 7px;
+    transition: all .3s ease;
+    -webkit-transition: all .3s ease; 
+    -o-transition: all .3s ease; 
+    -ms-transition: all .3s ease; 
+}
+
+.btn-more:hover{
+    opacity: .8;
+}
+
+
+/*Media queries for Resonsive design */
+
+
+
+
+@media only screen and (max-width:600px) {
+    
+img{
+    width: 200px;
+    height: 200px;
+}
+
+.container .gallery
+{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+   gap: 4px;
+    justify-content: center;
+    align-items: center;
+}
+.container .gallery img{
+    width:200px;
+    height: 200px;
+    opacity: .6;
+}
+
+
+}
+
+
+
+
+
+
+
+
+
+
