@@ -23,39 +23,70 @@ img {
   
 }
 
+
 /*header start */
-header .container .profile   {
-   display: flex;
-   flex-direction: column;
-   justify-content: space-around;
-   align-items: center;
+header .container{
+display: flex;
+align-items: center;
+justify-content: center;
+margin-right: 300px;
+}
 
- 
+.profile{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+ #following > button {
+    background-color: rgb(0, 153, 255);
+    padding: 0.5rem 1.2rem;
+    color: white;
+    border: 0;
+    border-radius: 3px;
+ }
 
-/*using flex-box to layout the header*/
 
+
+
+.profile-stat-count{
+    display: inline;
+   
 }
 
 .profile-stats ul{
+    gap: 10px;
+   
     display: flex;
+    justify-content: space-between;
+   
 }
-
 .profile-stats ul li{
+    display: inline;
     list-style-type: none;
-    margin-left: 10px;
+     
     font-size: 16px;
 }
 .profile-stat-count{
     font-weight: bolder;
     font-size: 14px;
 }
+.profile-image{
+    margin-left: 40px;
+width: 120px;
+height: 120px;
+padding: 4px 4px;
+border-radius: 50%;
+background: linear-gradient(rgb(240, 3, 228), orange);
+}
+
+
+
 .profile-image img{
     border-radius: 50%;
-    border: 8px solid;
-    border-right-color: #be1894;
-    border-left-color: rgb(223, 157, 34);
-    border-bottom-color: #bd1493;
-   border-top-color: #991077;
+  
+    width: 100%;
+    height:100%;
+    background-color: white;
+
   
 }
 .profile-user-settings >  .profile-edit-btn{
@@ -104,9 +135,7 @@ main img{
     -ms-transition: all .3s ease; 
     
 }
-main img:hover{
-    opacity: .8;
-}
+
 
 main img::focus{
     border: 2px solid rgb(244, 239, 239);
@@ -125,7 +154,7 @@ main .container:nth-child(1)
 {
     display: grid;
     grid-template-columns: repeat(3,1fr);
-   gap: 4px;
+    gap: 4px;
     justify-content: center;
     align-items: center;
 }
@@ -133,64 +162,120 @@ main .container:nth-child(1)
     list-style-type: none;
     font-size: 16px;
 }
-
-
-
 .gallery-item{
+    width:300px;
+    height: 400px;
     position: relative;
 }
-.gallery-item-type .fa-clone{
-    top: 20px;
-    right: 50px;
-    position: absolute;
-    color: white;
-    font-size: 20px;
 
+.gallery-item-type{
+    top: 10px;
+    right: 10px;
+    position: absolute;
+    font-size: 10px;
+    color: rgb(238, 230, 230);
+    font-size: 14px;
+ 
+}
+.gallery-item .gallery-image{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
 
 
-/*main end*/
-
-
-
-[ id="new-content"]{
-    flex: 1;
+.gallery-item-info{
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.7);
+    position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    color: white;
+    transition: all 0.05s ease;
+}
+.gallery-item:hover .gallery-item-info{
+    opacity: 1;
+    height: 100%;
+    width: 100%;
+}
+body{
+    position: relative;
+}
+.new-content{
+    bottom: 0;
+    display: flex;
+    
+    align-items: flex-end;
+  
+    justify-content: center;
+    position: absolute;
+    padding-bottom: 3rem;
+
+    width: 400px;
+    height: 30px;
+    margin-top:20rem;
+    width: 100%;
+    margin-top: 100px;
+    padding: 90px 0;
+}
+.gallery{
+    padding-bottom: 25rem;
 }
 
+/*main end*/
 
+.loader {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgb(161, 155, 155);
+    border-left: 5px solid rgb(255, 255, 255);
+    margin-right: 5px;
+    border-radius: 50%;
+    animation: loading 0.75s ease infinite;
+  }
 
-.btn-more{
-    text-align: center;
-    background-color: #262626;
-    color: rgb(222, 215, 215);
-    border: none;
-    padding: 8px 10px;
-    border-radius: 7px;
-    transition: all .3s ease;
-    -webkit-transition: all .3s ease; 
-    -o-transition: all .3s ease; 
-    -ms-transition: all .3s ease; 
-}
-
-.btn-more:hover{
-    opacity: .8;
-}
-
-
+/*mai
 /*Media queries for Resonsive design */
 
 
 
 
 @media only screen and (max-width:600px) {
-    
+    header .container{
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+    }
+
+    .profile{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-item .gallery-image{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .gallery-item{
+        width: 200px;
+        height: 300px;
+    }
+ 
 img{
     width: 200px;
     height: 200px;
 }
+
+
+
 
 .container .gallery
 {
@@ -200,18 +285,21 @@ img{
     justify-content: center;
     align-items: center;
 }
-.container .gallery img{
-    width:200px;
-    height: 200px;
-    opacity: .6;
-}
+
 
 
 }
 
+/*loading animation*/
 
-
-
+@keyframes loading {
+from{
+       transform: rotate(0turn);
+    }
+    to{
+        transform: rotate(1turn);
+    }
+}
 
 
 
